@@ -1,9 +1,8 @@
 // auth.ts
-
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { prisma } from "./prisma";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { prisma } from './prisma'
 
 const githubId = process.env.AUTH_GITHUB_ID;
 const githubSecret = process.env.AUTH_GITHUB_SECRET;
@@ -13,11 +12,10 @@ if (!githubId || !githubSecret) {
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.AUTH_SECRET!,
   adapter: PrismaAdapter(prisma),
-  providers: [
-    GitHub({
-      clientId: githubId,
-      clientSecret: githubSecret,
-    }),
-  ],
+  providers: [GitHub({
+    clientId: githubId,
+    clientSecret: githubSecret
+  })],
 });
