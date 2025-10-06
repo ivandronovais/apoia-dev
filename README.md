@@ -1,7 +1,6 @@
 ```markdown
 # ApoiaDev
 
-![Capa do Projeto](link-para-uma-imagem-ou-banner.png)
 
 ApoiaDev é uma plataforma open-source de apoio financeiro, construída para que criadores de conteúdo (desenvolvedores, designers, escritores, etc.) possam monetizar seu trabalho através de doações da comunidade.
 
